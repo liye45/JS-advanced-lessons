@@ -16,7 +16,6 @@
 var userId = 123;
 document.onclick = function () {
     console.log("userId = ",userId);
-    //alert("userId = "+userId);
 };
 (function () {
     var a=2,b=3;
@@ -36,15 +35,15 @@ function f(){
 var tmp = f();
 tmp[3]();
 function f(){
-    var getNumFuncs = [];//函数数组
+    var getNumFuncs = []
     var j;
     for(var i=0;i<10;i++){
         j = i;
         getNumFuncs[i] = function(){
-            return j;//如果return i;的话输出几？
+            return j;
         };
     }
-    return getNumFuncs;//设置断点，查看变量共享问题
+    return getNumFuncs;
 }
 var tmp = f();
 tmp[3]();

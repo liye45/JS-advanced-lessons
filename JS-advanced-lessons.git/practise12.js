@@ -5,7 +5,7 @@
         console.log("div1 onclick")
     }
 }*/
-window.onload = function (e) {
+/*window.onload = function (e) {
 
     var div1 = document.getElementById("div1");
     var div2 = document.getElementById("div2");
@@ -43,7 +43,7 @@ function div1click() {
 
 
 
-window.onload = function (e) {
+/*window.onload = function (e) {
     var div1 = document.getElementById("div1");
     var div2 = document.getElementById("div2");
     var eventHandler = function (e) {
@@ -71,8 +71,7 @@ window.onload = function (e) {
     div2.addEventListener("click",eventHandler,false);
     div2.removeEventListener("click",eventHandler);
     //div2.addEventListener("MyEvent",function(){console.log("处理自定义事件")});
-   // div2.dispatchEvent(new Event("MyEvent"));
-
+   // div2.dispatchEvent(new Event("MyEvent"));*/
 
 
 

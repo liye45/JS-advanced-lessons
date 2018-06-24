@@ -1,3 +1,58 @@
+//30 ES6对函数的扩展
+//ES6新增箭头函数（=>）
+//语法：参数=>函数体  或者  （参数）=>{函数体}
+//减少了冗余  避免了this的指向错误 如果箭头函数没有参数或者需要多个参数时，就使用一个圆括号代表参数
+var max=(a,b)=> a>b?a:b;
+max(2,3)
+var f=v=>v+1;
+f(2)
+//无参数或者多个参数时，使用小括号来表示参数，如果有多条语句则需要有大括号表示函数体
+var f1=()=>5
+var f1=function(){
+    return 5
+}
+var foo=(num1,num2)=>{
+    if(num1>num2){
+        return num1*2;
+    }
+    else{return num2*2}
+}
+//箭头函数可以与变量解构结合使用
+const full=({first,last})=>last+''+first;
+//箭头函数需要注意函数内this是函数定义时所在的对象绑定，而不是使用时的对象
+var point = {
+    x:0,
+    y:0,
+    moveTo:function (x,y) {
+        var moveToX = ()=>this.x=x;
+        var moveToY = ()=>this.y=y;
+        moveToX();
+        moveToY();
+    }
+};
+point.moveTo(2,2);
+console.log(point);
+function foo() {
+    setTimeout(() => {
+        console.log('id:', this.id);
+    }, 100);
+}
+var id = 21;
+foo.call({ id: 42 });
+//
+var sum = function(a,b,c){
+    if(b!=false){b = b||4;}
+    if(c!=false){c = c||5;}
+    return a+b+c;
+};
+console.log(sum(1,2,3));
+console.log(sum(1,2));
+console.log(sum(1));
+console.log(sum(1,0,0));
+function f(x,...y){
+    console.log(x,y);
+}
+f("a","b","c","d");
 //31 ES6新增的数据类型和结构
 //ES5对象属性名为字符串，容易造成冲突  ES6引入symbol，是一个基本数据类型 会产生一个独一无二的值，所以参数相同的或者没参数的都是不一样的
 //创建一个symbol类型的变量
